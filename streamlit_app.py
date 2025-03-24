@@ -64,8 +64,9 @@ if st.session_state.step == 'onboarding':
 elif st.session_state.step == 'spark':
     st.success(f"Today's focus: **{st.session_state.trait}**")
     prompt = random.choice(prompts[st.session_state.trait])
-st.markdown(f"### 🌟 Spark Prompt:\n**{prompt}**")
-st.markdown("---")
+    st.markdown(f"### 🌟 Spark Prompt:\n**{prompt}**")
+    st.markdown("---")
+
     if not st.session_state.writing_unlocked:
         mood = st.radio("How did this make you feel?", ["😊", "😐", "😢", "💪"])
         if st.button("Log reflection"):
@@ -97,4 +98,3 @@ st.markdown("---")
         st.caption(f"Writing unlocks after 3 reflections. {3 - len(st.session_state.entries)} to go!")
     else:
         st.caption("Writing unlocked ✅")
-
