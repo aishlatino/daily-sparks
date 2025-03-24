@@ -64,7 +64,7 @@ if st.session_state.step == 'onboarding':
 elif st.session_state.step == 'spark':
     st.success(f"Today's focus: **{st.session_state.trait}**")
     prompt = random.choice(prompts[st.session_state.trait])
-    st.markdown(f"### 🌟 Spark Prompt:
+st.markdown(f"### 🌟 Spark Prompt:\\n**{prompt}**")
 **{prompt}**")
 
     st.markdown("---")
